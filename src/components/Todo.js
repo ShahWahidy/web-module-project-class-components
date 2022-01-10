@@ -1,15 +1,32 @@
 import React from 'react';
 
-const Todo = props => {
-  const handleClick = () => {
-    props.handleToggleTask(props.task);
-  }
+class ToDo extends React.Component{
+    
+     handleClick = () => {
+            this.props.handleToggleTask(this.props.task);
+          }
 
-  return (
-    <div onClick={handleClick} className={`task${props.task.completed ? ' completed' : ''}`}>
-      <p>{props.task.name}</p>
-    </div>
-  );
-};
+    render(){
+        return (
+                <div onClick={this.handleClick} className={`task${this.props.task.completed ? ' completed' : ''}`}>
+                  <p>{this.props.task.name}</p>
+                </div>
+              );
+    }
+}
 
-export default Todo;
+
+
+// const Todo = props => {
+//   const handleClick = () => {
+//     props.handleToggleTask(props.task);
+//   }
+
+//   return (
+//     <div onClick={handleClick} className={`task${props.task.completed ? ' completed' : ''}`}>
+//       <p>{props.task.name}</p>
+//     </div>
+//   );
+// };
+
+export default ToDo;
