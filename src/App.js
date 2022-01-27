@@ -3,7 +3,7 @@ import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
 
 
-const tasks = [
+const intTasks = [
   {
     task: 'Organize Garage',
     id: 1528817077286,
@@ -19,7 +19,7 @@ class App extends React.Component {
    constructor(){
     super();
     this.state ={
-      tasks: tasks
+      tasks: intTasks
     }
   }
 
@@ -34,7 +34,7 @@ class App extends React.Component {
 
   handleAddTask = (taskName) => {
     const newTask ={
-      name:taskName,
+      task:taskName,
       id: Date.now(),
       completed: false
     }
